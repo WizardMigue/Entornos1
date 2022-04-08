@@ -21,4 +21,11 @@ public class Usuario {
 		this.telefono = builder.getTelefono();
 		this.direccion = builder.getDireccion();
 	}
+
+	@Override
+	public String toString() {
+		return "Usuario [email=" + email + ", nombre=" + nombre + ", apellidos=" + apellidos + ", telefono=" + telefono
+				+ ", direccion=" + direccion + "]";
+	}
+
 }
