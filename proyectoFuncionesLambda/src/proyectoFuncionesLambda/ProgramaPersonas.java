@@ -1,6 +1,7 @@
 package proyectoFuncionesLambda;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 
 public class ProgramaPersonas {
 
@@ -16,13 +17,19 @@ public class ProgramaPersonas {
 		lista.forEach(p -> System.out.println(p));
 		System.out.println("------");
 
-		lista.sort((p1, p2) -> {
-			if (p1.getNombre().compareTo(p2.getNombre()) == 0)
+		Comparator<Persona> funcionComparativa = (p1, p2) -> {
+			if (p1.getNombre().compareTo(p2.getNombre()) == 0) {
 				return p1.getEdad() - p2.getEdad();
-			else
+			} else {
 				return p1.getNombre().compareTo(p2.getNombre());
-		});
-
+			}
+		};
+		lista.forEach(p -> System.out.println(p));
+		lista.add(new Persona("Joaquín", 34));
+		lista.sort(funcionComparativa);
+		lista.forEach(p -> System.out.println(p));
+		lista.add(new Persona("Joaquina", 24));
+		lista.sort(funcionComparativa);
 		lista.forEach(p -> System.out.println(p));
 	}
 
