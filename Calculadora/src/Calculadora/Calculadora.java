@@ -29,4 +29,12 @@ public class Calculadora {
 	public double division() {
 		return num1 / num2;
 	}
+
+	public double raizNum1() {
+		return Math.sqrt(num1);
+	}
+
+	public double raizNum2() {
+		return Math.sqrt(num2);
+	}
 }
